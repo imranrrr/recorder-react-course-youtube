@@ -1,8 +1,7 @@
-import React, {useState , useEffect} from 'react'
+import React, {useState , useEffect, useCallback} from 'react'
 
-export default function Home(props) {
+export default function Home({count, increment, setCount}) {
 
-    const [count, setCount] = useState(2)
     const [disableIncrement, setDisableIncrement] = useState(false)
     const [disableDecrement, setDisableDecrement] = useState(false)
 
@@ -22,13 +21,11 @@ export default function Home(props) {
 
     }, [count])
 
-    const increment = () =>{
-        setCount((prevValue) => prevValue + 1)
-    }
-    const decrement = () =>{
-        setCount((prevValue) => prevValue - 1)
+    const setUser = useCallback(() =>{
+        // setCount((prevValue) => prevValue - 1)
+        setUser("name")
         
-    }
+    }, [])
 
   return (
     <>
